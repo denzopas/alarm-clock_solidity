@@ -1,0 +1,25 @@
+pragma solidity ^0.6.0;
+
+// Alarm clock contract
+contract AlarmClock {
+    // The time at which the alarm will go off
+    uint256 public alarmTime;
+    
+    // The address of the user who set the alarm
+    address public user;
+    
+    // Constructor function to set the alarm time and user
+    constructor(uint256 _alarmTime, address _user) public {
+        alarmTime = _alarmTime;
+        user = _user;
+    }
+    
+    // Function to trigger the alarm
+    function triggerAlarm() public {
+        // Check if the current time is greater than or equal to the alarm time
+        require(now >= alarmTime, "The alarm time has not been reached.");
+        
+        // Perform the action for the alarm (e.g. send a notification to the user)
+        // ...
+    }
+}
